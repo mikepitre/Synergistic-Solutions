@@ -4,7 +4,12 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    per_page = 15
+
+    offset   = (params.fetch(:page, 1).to_i * per_page) - per_page
+
+    @locations = Location.limit(params.fetch(:limit, per_page))
+                     .offset(offset)
   end
 
   # GET /locations/1
