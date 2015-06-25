@@ -5,5 +5,20 @@
   <%= @company.name %>
 </p>
 
+<p>
+  <strong>Locations:</strong>
+  <%= @company.locations %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @company.courses %>
+</p>
+
+<p>
+  <strong>Employees:</strong>
+  <%= @company.employees %>
+</p>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
