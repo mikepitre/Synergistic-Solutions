@@ -12,8 +12,14 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @course.location %>
+  <%= @course.location.name %>
 </p>
+
+<p>
+  <strong>Employees:</strong>
+  <%= @course.location.employees %>
+</p>
+
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

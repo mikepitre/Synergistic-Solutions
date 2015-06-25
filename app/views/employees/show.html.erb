@@ -7,12 +7,17 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @employee.company %>
+  <%= @employee.company.name %>
 </p>
 
 <p>
   <strong>Location:</strong>
   <%= @employee.location %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @employee.courses %>
 </p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |

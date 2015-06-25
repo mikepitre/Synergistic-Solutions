@@ -7,7 +7,17 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @location.company %>
+  <%= @location.company.name %>
+</p>
+
+<p>
+  <strong>Employees:</strong>
+  <%= @location.company.employees %>
+</p>
+
+<p>
+  <strong>Coures:</strong>
+  <%= @location.company.courses %>
 </p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
