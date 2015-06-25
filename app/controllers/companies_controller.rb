@@ -4,7 +4,12 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    per_page = 5
+
+    offset   = (params.fetch(:page, 1).to_i * per_page) - per_page
+
+    @companies = Company.limit(params.fetch(:limit, per_page))
+                     .offset(offset)
   end
 
   # GET /companies/1
