@@ -15,7 +15,7 @@
 
     location = company.locations.create(name: Faker::Address.state)
     3.times do
-      location.courses.create(title: Faker::Company.catch_phrase)
+      location.courses.create(name: Faker::Company.catch_phrase)
     end
   end
 end
