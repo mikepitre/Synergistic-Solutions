@@ -4,7 +4,12 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    per_page = 15
+
+    offset   = (params.fetch(:page, 1).to_i * per_page) - per_page
+
+    @employees = Employee.limit(params.fetch(:limit, per_page))
+                     .offset(offset)
   end
 
   # GET /employees/1
